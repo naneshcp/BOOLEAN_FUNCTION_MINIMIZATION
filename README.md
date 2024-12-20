@@ -38,16 +38,10 @@ Hardware – PCs, Cyclone II , USB flasher
 Developed by: Naneshvaran
 RegisterNumber: 24900972
 */
-module boolean(f_and,f_or,f_nor,f_not,f_nand,f_xor,f_xnor,a,b);
-input a,b;
-output f_and,f_or,f_nor,f_not,f_nand,f_xor,f_xnor;
-and(f_and,a,b);
-or(f_or,a,b);
-not(f_not,a);
-nand(f_nand,a,b);
-nor(f_nor,a,b);
-xor(f_xor,a,b);
-xnor(f_xnor,a,b);
+module boolean(a,b,c,d,f1);
+input a,b,c,d;
+output f1;
+assign f1=((~b & ~d)|(~a & b & d)|(a & b & ~c));
 endmodule
 ```
 
@@ -56,13 +50,15 @@ endmodule
 **RTL realization**
 
 **Output:**
-![output02(de)](https://github.com/user-attachments/assets/2c04985c-57f0-4b77-86ea-dc77f141413a)
+![output02(de)](https://github.com/user-attachments/assets/ea1a5b5f-d17b-4b6d-88e8-f1cf0b7449ad)
+
 
 
 **RTL**
 
 **Timing Diagram**
-![waveform02(de)](https://github.com/user-attachments/assets/34044e0e-2de0-4a00-b560-2a287cc23b28)
+![waveform02(de)](https://github.com/user-attachments/assets/2c73bd5c-9ba0-44b8-902b-9ada7dcd1e01)
+
 
 
 **Result:**
